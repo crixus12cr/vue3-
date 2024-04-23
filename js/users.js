@@ -15,6 +15,9 @@ window.addEventListener('load', ()=>{
 
             this.listUsers();
         },
+        mounted() {
+            this.$refs.userName.focus();
+        },
         methods: {
             listUsers: async function(){
                 const res= await fetch('https://jsonplaceholder.typicode.com/users');
