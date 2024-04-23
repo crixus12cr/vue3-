@@ -16,7 +16,7 @@ window.addEventListener('load', ()=>{
             this.listUsers();
         },
         mounted() {
-            this.$refs.userName.focus();
+            this.$refs.name.focus();
         },
         methods: {
             listUsers: async function(){
@@ -29,7 +29,15 @@ window.addEventListener('load', ()=>{
             updateLocalStorage: function(){
                 localStorage.setItem('vue3.users', JSON.stringify(this.users));
             },
-            
+            deleteUser: function(id, event){
+                const confirmation = confirm('Are you sure you want to delete this user?');
+                if (confirmation) {
+                    this.users= this.users.filter(user=>user.id!=id);
+                    this.updateLocalStorage();
+                }else{
+                    event.preventDefault();
+                }
+            }
         },
     });
 
