@@ -58,7 +58,7 @@
                                 <td>{{ user.username }}</td>
                                 <td>{{ user.email }}</td>
                                 <td><button class="btn btn-info btn-block">Update</button></td>
-                                <td><button class="btn btn-danger btn-block">Delete</button></td>
+                                <td><button @click="deleteUser(user.id, $event)" class="btn btn-danger btn-block">Delete</button></td>
                             </tr>
                         </tbody>
                     </table>

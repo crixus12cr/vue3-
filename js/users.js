@@ -28,7 +28,8 @@ window.addEventListener('load', ()=>{
             },
             updateLocalStorage: function(){
                 localStorage.setItem('vue3.users', JSON.stringify(this.users));
-            }
+            },
+            
         },
     });
 
